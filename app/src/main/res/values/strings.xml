@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Willbolt</string>
+    <string name="accessibility_service_label">Willbolt</string>
+    <!-- accessibility_description, admin_description and disclosure_body differ between the editions and are in
+         src/play/res/values/edition.xml and src/full/res/values/edition.xml. -->
+</resources>
