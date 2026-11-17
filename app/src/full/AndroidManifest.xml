@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- What only the full edition (GitHub, sideloading) declares. The Play edition has none of this. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- One tap to ask Android to leave Willbolt out of battery optimisation. The Play edition opens the list instead. -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <!-- Granted once over adb (see tools/install-to-phone.ps1). Lets the app switch its own
+         accessibility service back on when the phone turns it off. -->
+    <uses-permission
+        android:name="android.permission.WRITE_SECURE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <application>
+        <!-- Hosts the watchdog (settings observers and a 30-second tick) while something is locked. -->
+        <service
+            android:name=".service.GuardService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Keeps a self-control app's protection watchdog running" />
+        </service>
+
+        <!-- Makes Android treat the app as a device-policy controller, which it never hibernates. -->
+        <service
+            android:name=".admin.GuardDeviceAdminService"
+            android:exported="true"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_SERVICE" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

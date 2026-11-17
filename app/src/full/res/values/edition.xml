@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Shown by Android itself in its accessibility list and consent dialog. The Play edition has its own wording. -->
+    <string name="accessibility_description">Willbolt uses this permission for four things, all on your phone: (1) to see which app or website is open (it reads the app name, window text and the browser address bar) so it can block the ones you chose and count your time in apps; (2) to take a screenshot every few seconds and check it for adult content with a model on the phone - the picture is never saved or sent; (3) only while a lock you made with Willbolt\'s own protection on is locked, to keep itself from being switched off or removed; and (4) to press Home or lock the screen when something is blocked. Nothing is stored or sent anywhere.</string>
+    <!-- Also shown on Android's "activate" screen. The uninstall guard closes any screen that has Willbolt's name next to
+         words like uninstall / force stop / deactivate, so this text must not use them or activating would be blocked. -->
+    <string name="admin_description">While Willbolt is a device administrator, Android\'s Settings will not let anyone stop, clear or remove it until the administrator is switched off. Willbolt requests no other administrator powers.</string>
+
+    <!-- The in-app disclosure shown before Willbolt sends you to Android\'s accessibility settings. -->
+    <string name="disclosure_body">Willbolt\'s accessibility service can see what is on your screen. It reads the name of the app that is open, the text on the screen (including a browser\'s address bar) and, if you turn the screen check on, a screenshot every few seconds. It uses that to:\n\n• block the apps and websites you chose, and count your time in apps for your limits and breaks;\n• check the screenshots for adult content, with a model that runs on this phone;\n• keep itself from being switched off or uninstalled, but only while a lock you made with Uninstall protection on is locked;\n• press Home or lock the screen when something is blocked.\n\nNone of it is stored or sent anywhere: screenshots are looked at in memory and thrown away, and there are no accounts, ads or analytics. You can switch the service off at any time in Android\'s Accessibility settings.</string>
+</resources>

@@ -1,0 +1,40 @@
+# Everything the merged manifest of the full edition may contain. Checked by verifyManifestFullRelease, which fails the build
+# on any permission, activity, service, receiver or provider that is not listed here.
+#
+# Reviewed 2026-10-28 (0.6.0). Nothing here talks to the network except uses-permission INTERNET for the DNS filter.
+# androidx.* entries come from AndroidX WorkManager, Startup, ProfileInstaller and Room (used by WorkManager) and
+# do not send data anywhere. ai.onnxruntime.TelemetryInitializer is deliberately absent (Microsoft telemetry).
+# When this fails after a dependency update, find out where each new entry comes from before adding it.
+
+activity app.willbolt.ui.MainActivity
+permission app.willbolt.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+provider androidx.startup.InitializationProvider
+receiver androidx.profileinstaller.ProfileInstallReceiver
+receiver androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy
+receiver androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy
+receiver androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy
+receiver androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy
+receiver androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver
+receiver androidx.work.impl.background.systemalarm.RescheduleReceiver
+receiver androidx.work.impl.diagnostics.DiagnosticsReceiver
+receiver androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver
+receiver app.willbolt.admin.GuardAdminReceiver
+receiver app.willbolt.service.BootReceiver
+service androidx.room.MultiInstanceInvalidationService
+service androidx.work.impl.background.systemalarm.SystemAlarmService
+service androidx.work.impl.background.systemjob.SystemJobService
+service androidx.work.impl.foreground.SystemForegroundService
+service app.willbolt.admin.GuardDeviceAdminService
+service app.willbolt.service.GuardAccessibilityService
+service app.willbolt.service.GuardService
+service app.willbolt.vpn.DnsVpnService
+uses-permission android.permission.ACCESS_NETWORK_STATE
+uses-permission android.permission.FOREGROUND_SERVICE
+uses-permission android.permission.FOREGROUND_SERVICE_SPECIAL_USE
+uses-permission android.permission.INTERNET
+uses-permission android.permission.KILL_BACKGROUND_PROCESSES
+uses-permission android.permission.RECEIVE_BOOT_COMPLETED
+uses-permission android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
+uses-permission android.permission.WAKE_LOCK
+uses-permission android.permission.WRITE_SECURE_SETTINGS
+uses-permission app.willbolt.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION

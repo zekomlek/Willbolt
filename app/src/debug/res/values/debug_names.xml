@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- So the debug build can be told apart from the real app in the launcher and in Android's accessibility list. -->
+    <string name="app_name">Willbolt debug</string>
+    <string name="accessibility_service_label">Willbolt debug</string>
+</resources>
